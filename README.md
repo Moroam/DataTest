@@ -102,7 +102,7 @@ Usage:
     }
   }'
 ```
-  Допускаются сокращенная запись
+  Допускается сокращенная запись
 * columns_count  => cnt
 * row_number     => rn
 * columns        => cols
