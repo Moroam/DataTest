@@ -3,21 +3,20 @@ Checks the array for matching the template.
 Conditions for checking (template) are set as a JSON string.
 
 The following conditions are checked:
-  - columns_count - number of columns
-  - row_number - availability of a row with the specified number (and the minimum number of rows, respectively)
-  - columns* - parameters for checking the row (row_number string).
-For line elements, set:
-  - index / column name
-  - pattern - value template
-  - compare_method - comparison method
-    => equal (simple equality)
-    => preg_match (regular expression)
-    => function**
-  - compare_result - the result of the comparison
-    => true / false
+* columns_count => number of columns
+* row_number => availability of a row with the specified number (and the minimum number of rows, respectively)
+* columns => parameters for checking the row (row_number string).
 
-* - multiple checks can be made for each element
-   If the validation rule for a column is a simple string, the following default values are used:
+For line elements, set:
+* index/column name
+* pattern => value template
+* compare_method => comparison method (equal - simple equality, preg_match - regular expression, function)
+* compare_result => the result of the comparison (true / false)
+
+Remarks:
+1. Multiple checks can be made for each element
+2. If the validation rule for a column is a simple string, the following default values are used:
+```   
    "A": "txt"
       =>
    "A":{
@@ -25,11 +24,14 @@ For line elements, set:
       "compare_method": "equal",
       "compare_result": "true"
     }
-** - calculates the value boolval($pattern($value)), where $pattern is the function name, and $value is the value to check
+```
+2. The function check is calculates the value boolval($pattern($value)), 
+   where $pattern is the function name, and $value is the value to check
 
 Usage:
-  1. Creating a JSON string with verification parameters.
-    General view of the JSON string:
+1. Creating a JSON string with verification parameters.
+   General view of the JSON string:
+```
     $JSON = '{
       "columns_count" : 5,  # default 0
       "row_number": 1,      # default 1
@@ -41,16 +43,17 @@ Usage:
         }
       }
     }'
-    Abbreviated entries are allowed
-    - columns_count   => cnt
-    - row_number      => rn
-    - columns         => cols
-    - pattern         => pat
-    - compare_method  => cm
-    - compare_result  => cr
-    - equal           => eq
-    - preg_match      => pm
-    - function        => fn
+```
+  Abbreviated entries are allowed
+* columns_count   => cnt
+* row_number      => rn
+* columns         => cols
+* pattern         => pat
+* compare_method  => cm
+* compare_result  => cr
+* equal           => eq
+* preg_match      => pm
+* function        => fn
 2. Creating a DataTest object and setting the $JSON validation template
 3. Check the array for matching the template
 
