@@ -15,7 +15,7 @@ For line elements, set:
     => function**
   - compare_result - the result of the comparison
     => true / false
-* - multiple checks can be made for each element
+*- multiple checks can be made for each element
    If the validation rule for a column is a simple string, the following default values are used:
    "A": "txt"
       =>
