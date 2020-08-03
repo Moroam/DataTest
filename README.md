@@ -15,7 +15,8 @@ For line elements, set:
     => function**
   - compare_result - the result of the comparison
     => true / false
-*- multiple checks can be made for each element
+
+* - multiple checks can be made for each element
    If the validation rule for a column is a simple string, the following default values are used:
    "A": "txt"
       =>
@@ -70,7 +71,8 @@ Usage:
       => function*** (функция)
     - compare_result - результат сравнения
       => true / false
-*  - для каждого элемента можно сделать несколько проверок.
+
+* - для каждого элемента можно сделать несколько проверок.
    Если правило проверки для колонки это простая строка, то используются следующие значения по умолчанию:
    "A": "txt"
       =>
