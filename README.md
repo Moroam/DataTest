@@ -15,7 +15,7 @@ For line elements, set:
     => function**
   - compare_result - the result of the comparison
     => true / false
-*  - multiple checks can be made for each element
+*  -- multiple checks can be made for each element
    If the validation rule for a column is a simple string, the following default values are used:
    "A": "txt"
       =>
@@ -24,7 +24,7 @@ For line elements, set:
       "compare_method": "equal",
       "compare_result": "true"
     }
-** - calculates the value boolval($pattern($value)), where $pattern is the function name, and $value is the value to check
+** -- calculates the value boolval($pattern($value)), where $pattern is the function name, and $value is the value to check
 
 Usage:
   1. Creating a JSON string with verification parameters.
